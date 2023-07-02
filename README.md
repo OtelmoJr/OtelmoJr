@@ -1,4 +1,5 @@
-### Hi, I'm Otelmo, currently working for Alpargatas!
+### Hello, I'm Otelmo, just passionate about technology!!!
+### currently working for Alpargatas!
 - Data Science
 - Data Engineer
 - Python Developer
