@@ -2,7 +2,7 @@
 ### currently working for Alpargatas!
 - Data Science
 - Data Engineer
-- Python Developer
+- Software Engineer
 
 ## Linguagens e Ferramentas 
 💻 Uso Geral: <br>
