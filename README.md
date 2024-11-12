@@ -1,5 +1,6 @@
 ### Hello, I'm Otelmo, just passionate about technology!!!
-### currently working for Alpargatas!
+### i´m intersted about this topics
+- Data Engineer 
 - Data Science
-- Data Engineer
+- Machine learning
 - Software Engineer
