@@ -4,11 +4,11 @@
 
 # Otelmo Junior
 
-### AI Data Engineer — building the data platforms *and* the AI systems that run on top of them
+### AI Data Engineer
 
-I design production-grade data platforms (lakehouse, streaming CDC, exactly-once)
-and the AI infrastructure that sits on them (GraphRAG, multi-agent orchestration,
-LLMOps). Open formats, distributed systems, and real numbers over slideware.
+I build data platforms and the AI systems that run on top of them: lakehouse
+architectures, streaming CDC, GraphRAG, multi-agent orchestration, LLMOps. I work in
+open formats, and I try to publish numbers I actually measured rather than claims.
 
 [![Email](https://img.shields.io/badge/Email-otelmojunior@gmail.com-D14836?style=flat&logo=gmail&logoColor=white)](mailto:otelmojunior@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-OtelmoJr-181717?style=flat&logo=github&logoColor=white)](https://github.com/OtelmoJr)
@@ -19,46 +19,46 @@ LLMOps). Open formats, distributed systems, and real numbers over slideware.
 
 ## What I do
 
-I work across the whole modern data + AI stack — from the bytes on object storage
-to the agent reasoning over them:
+I work across both halves of the modern data and AI stack.
 
-- **Data Engineering** — lakehouse on open table formats (Apache Iceberg), git-like
-  data versioning (Nessie), federated SQL (Trino), real-time Change Data Capture
-  with exactly-once guarantees, and a Medallion (Bronze → Silver) architecture.
-- **AI Engineering** — Retrieval-Augmented Generation beyond naïve vector search
-  (GraphRAG over a knowledge graph), stateful multi-agent orchestration (LangGraph),
-  and production LLMOps (semantic caching, guardrails, cost & latency telemetry).
-- **Platform & rigor** — everything ships as a one-command Docker stack, runs the
-  scenarios end to end, and pastes the **real output** into the README. Each repo
-  also carries a consultancy-style requirements package (business case, ISO/IEC/IEEE
-  29148 requirements spec, solution architecture, acceptance plan).
+- **Data engineering.** Lakehouse on open table formats (Apache Iceberg), git-like
+  data versioning with Nessie, federated SQL through Trino, real-time Change Data
+  Capture with exactly-once guarantees, and Bronze/Silver Medallion layers.
+- **AI engineering.** Retrieval that goes past plain vector search (GraphRAG over a
+  knowledge graph), stateful multi-agent orchestration with LangGraph, and LLMOps in
+  production: semantic caching, guardrails, cost and latency telemetry.
+- **Platform work.** Every project comes up with one Docker command, runs its
+  scenarios end to end, and has the real output pasted into its README. Each repo
+  also carries a requirements package written like a consultancy deliverable:
+  business case, ISO/IEC/IEEE 29148 requirements spec, solution architecture, and an
+  acceptance plan.
 
-> My bar is not "it compiles." It's: **it comes up, runs the scenarios end to end,
-> and proves every differentiator with real output.** Bringing the full stack up is
-> exactly what surfaces the bugs a demo never would.
+I try not to stop at "it compiles". A project is finished when the whole stack comes
+up and every claim in the README has output behind it. Running things end to end is
+also where I find the bugs a demo would have hidden.
 
 ---
 
 ## Featured projects
 
-Four production-grade systems, each running 100% locally at zero cloud cost, each
-with bilingual (EN/PT-BR) docs and measured results.
+Six systems, all running locally at zero cloud cost, with bilingual docs (EN/PT-BR)
+and measured results.
 
 ### Data platform
 
 | Project | What it proves | Stack |
 |---|---|---|
-| **[Zero-Copy Data Mesh](https://github.com/OtelmoJr/zero-copy-lakehouse)** | Cross-domain joins with **zero data duplication**; data-as-code (branch → validate → merge/rollback) via Nessie; quality gate that blocks bad data before it reaches `main`. | Iceberg · Nessie · Trino · MinIO · Dagster · Great Expectations |
-| **[Real-Time CDC → Lakehouse](https://github.com/OtelmoJr/real-time-cdc-lakehouse)** | Every insert/update/delete in Postgres mirrored into a Silver table in **~12s, row-for-row**; **exactly-once** across crashes; deletes and late/out-of-order events handled correctly. | Postgres · Debezium · Redpanda · Spark Structured Streaming · Iceberg · Trino |
-| **[Kubernetes-Native FinOps Pipeline](https://github.com/OtelmoJr/k8s-finops-pipeline)** | Attributes cloud cost — down to a **3-minute pod** — to the right team/namespace, and surfaces waste (**53.8% of modelled spend** was reserved-but-unused). Spark-on-K8s via the Spark Operator. | Spark-on-K8s · MinIO · ClickHouse · Grafana · Prometheus |
+| **[Zero-Copy Data Mesh](https://github.com/OtelmoJr/zero-copy-lakehouse)** | Cross-domain joins with **zero data duplication**; data-as-code (branch → validate → merge/rollback) through Nessie; a quality gate that blocks bad data before it reaches `main`. | Iceberg · Nessie · Trino · MinIO · Dagster · Great Expectations |
+| **[Real-Time CDC → Lakehouse](https://github.com/OtelmoJr/real-time-cdc-lakehouse)** | Every insert, update and delete in Postgres mirrored into a Silver table in **~12s, row for row**, exactly-once across crashes, with deletes and late or out-of-order events handled correctly. | Postgres · Debezium · Redpanda · Spark Structured Streaming · Iceberg · Trino |
+| **[Kubernetes-Native FinOps Pipeline](https://github.com/OtelmoJr/k8s-finops-pipeline)** | Attributes cloud cost down to a **3-minute pod**, to the team and namespace that incurred it, and surfaces waste: **53.8% of modelled spend** was reserved and never used. Spark-on-K8s through the Spark Operator. | Spark-on-K8s · MinIO · ClickHouse · Grafana · Prometheus |
 
 ### AI platform
 
 | Project | What it proves | Stack |
 |---|---|---|
-| **[GraphRAG Multi-Agent](https://github.com/OtelmoJr/graphrag-multiagent)** | Multi-hop reasoning a plain vector search gets wrong; a knowledge graph + hybrid retrieval feeding a Supervisor / Reader / **Fact-Checker** agent loop with self-correction. | LangGraph · Neo4j · Qdrant · Ollama · Ragas |
-| **[LLMOps Production Gateway](https://github.com/OtelmoJr/llmops-gateway)** | Drop-in OpenAI-compatible gateway adding semantic cache (**TTFT ~9ms on a hit vs ~820ms to the model**), fail-closed PII/injection guardrails, and full cost/latency telemetry — without wrecking latency. | FastAPI · Qdrant · Ollama · SQLite · Prometheus |
-| **[Autonomous SRE Agent](https://github.com/OtelmoJr/sre-agent)** | Sandbox-first, rollback-always, approval-gated remediation: the agent proves a fix in an isolated sandbox, then a **human-in-the-loop gate** must approve before it touches production — deny it and nothing runs. | Python · Docker sandbox · HITL · pluggable LLM |
+| **[GraphRAG Multi-Agent](https://github.com/OtelmoJr/graphrag-multiagent)** | Multi-hop questions that plain vector search gets wrong. A knowledge graph plus hybrid retrieval feeds a Supervisor / Reader / Fact-Checker agent loop that self-corrects. | LangGraph · Neo4j · Qdrant · Ollama · Ragas |
+| **[LLMOps Production Gateway](https://github.com/OtelmoJr/llmops-gateway)** | Drop-in OpenAI-compatible gateway with a semantic cache (**TTFT ~9ms on a hit against ~820ms going to the model**), fail-closed PII and injection guardrails, and full cost and latency telemetry. | FastAPI · Qdrant · Ollama · SQLite · Prometheus |
+| **[Autonomous SRE Agent](https://github.com/OtelmoJr/sre-agent)** | The agent writes its rollback first and proves the fix in an isolated sandbox. A **human-in-the-loop gate** then has to approve before anything touches production; deny it and nothing runs. | Python · Docker sandbox · HITL · pluggable LLM |
 
 ---
 
@@ -101,30 +101,19 @@ with bilingual (EN/PT-BR) docs and measured results.
 
 ---
 
-## How I build (the differentiators)
+## How I build
 
-- **Open formats first.** Iceberg / Delta over proprietary lock-in — data outlives
-  the engine that wrote it.
-- **Correctness under failure.** Exactly-once, idempotent upserts, checkpoint
-  recovery, blocking data-quality gates — the parts that are invisible in a demo and
-  decisive in production.
-- **Latency as a budget.** In the LLM gateway, only the cheap guardrail and cache
-  lookup run before the first token; everything else is deferred to background tasks.
-- **Cost-aware by default.** Every design states its trade-offs (latency vs
-  throughput, cost vs performance) and, where relevant, tracks token/cloud cost.
+- **Open formats first.** Iceberg and Delta instead of proprietary lock-in, so the
+  data outlives whatever engine wrote it.
+- **Correctness under failure.** Exactly-once delivery, idempotent upserts, recovery
+  from checkpoints, blocking data-quality gates. None of it shows up in a demo, and
+  all of it matters in production.
+- **Latency is a budget.** In the LLM gateway only the cheap guardrail and the cache
+  lookup run before the first token; everything else moves to background tasks.
+- **Cost gets tracked.** Designs state their trade-offs, latency against throughput
+  and cost against performance, and track token and cloud spend where it applies.
 - **Documented like a real delivery.** Business case, requirements spec, architecture
-  doc, and acceptance plan per project — not just code.
-
----
-
-## GitHub stats
-
-<div align="center">
-
-![Otelmo's GitHub stats](https://github-readme-stats.vercel.app/api?username=OtelmoJr&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
-![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=OtelmoJr&layout=compact&theme=tokyonight&hide_border=true)
-
-</div>
+  document and acceptance plan for each project, not just code.
 
 ---
 
